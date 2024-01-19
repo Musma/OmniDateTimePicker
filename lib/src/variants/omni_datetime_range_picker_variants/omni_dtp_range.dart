@@ -77,7 +77,7 @@ class _OmniDtpRangeState extends State<OmniDtpRange>
             ConstrainedBox(
               constraints: const BoxConstraints(
                 maxWidth: 350,
-                maxHeight: 550,
+                maxHeight: 445,
               ),
               child: TabBarView(
                 controller: _tabController,
@@ -229,7 +229,7 @@ class _PickerViewState extends State<PickerView>
           ),
           if (widget.type == OmniDateTimePickerType.dateAndTime)
             Padding(
-              padding: const EdgeInsets.only(bottom: 24.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: TimePickerSpinner(
                 time: widget.initialDate,
                 amText: localizations.anteMeridiemAbbreviation,
