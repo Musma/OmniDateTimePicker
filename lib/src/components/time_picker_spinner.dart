@@ -122,9 +122,9 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
   bool isMinuteScrolling = false;
   bool isSecondsScrolling = false;
   bool isAPScrolling = false;
-  double defaultItemHeight = 60;
+  double defaultItemHeight = 30;
   double defaultItemWidth = 45;
-  double defaultSpacing = 20;
+  double defaultSpacing = 10;
   AlignmentGeometry defaultAlignment = Alignment.center;
 
   int _getHourCount() {
@@ -207,6 +207,8 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = MaterialLocalizations.of(context);
+
     List<Widget> contents = [
       SizedBox(
         width: _getItemWidth(),
@@ -224,6 +226,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
           () => isHourScrolling = false,
         ),
       ),
+      Text(localizations.timePickerHourLabel),
       spacer(),
       SizedBox(
         width: _getItemWidth(),
@@ -241,6 +244,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
           () => isMinuteScrolling = false,
         ),
       ),
+      Text(localizations.timePickerMinuteLabel),
     ];
 
     if (widget.isShowSeconds) {
